@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html>
+<title> Bootstrap template- Pizza 365 project</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- font -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- CSS -->
+<style>
+    body {
+        background-image: url("images/bg-galaxy.jpg");
+    }
+    
+    h1 {
+        padding-bottom: 50px
+    }
+    
+    .bg-pizza {
+        width: 190px;
+        float: right;
+        position: relative;
+        bottom: 20px;
+    }
+    /* .box-shadow {
+        box-shadow: 0 0 24px rgba(255, 92, 27, 0.7);
+    } */
+    
+    .bg-orderid {
+        /* background: linear-gradient(45deg, #8408f1, #1672c8, rgb(60, 225, 251), #1672c8, #8408f1); */
+        background-image: url("https://scx2.b-cdn.net/gfx/news/2019/galaxy.jpg");
+        background-image: url("https://tophinhanhdep.com/wp-content/uploads/2021/10/Blue-Galaxy-Wallpapers.jpg");
+        /* background-repeat: no-repeat; */
+        background-size: cover;
+        /* background: linear-gradient(45deg, #ff7c5f, #fef9d7, #ffaee4, #c3ff54); */
+        padding: 30px;
+        border-radius: 150px;
+        box-shadow: 0 0 80px rgb(255, 193, 6);
+    }
+    
+    .text-com-on {
+        color: rgb(43, 255, 0)
+    }
+    
+    .ma_don {
+        text-align: center;
+        color: rgb(255, 32, 32)
+    }
+    
+    .margin-top {
+        margin-top: 40px;
+    }
+    /* .bg-pizza {
+        background: linear-gradient(45deg, #635e5d, #fef9d7, #635e5d);
+    } */
+</style>
+
+<body onload="onPageLoading()">
+
+    <!-- Menu -->
+    <div class="container-fluid bg-light">
+        <div class="row">
+            <div class="col-sm-12">
+                <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav nav-fill w-100">
+                            <li class="nav-item active">
+                                <a class="nav-link text-primary font-weight-bold" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-primary font-weight-bold" href="#combo-pizza">Combo Pizza</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-primary font-weight-bold" href="#pizza">Pizza Type</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-primary font-weight-bold" href="#don-hang">Đơn Hàng</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-primary font-weight-bold" onclick="onBtnOrderDetailClick()" style="cursor: pointer; ">Order Detail</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="container" style="padding: 120px 0 50px 0;" id="all">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <!-- Title row home
+                    <div class="col-sm-12 text-center text-danger">
+                        <h1><b>Pizza 365 - Truly Italian !!!</b></h1>
+                    </div> -->
+
+                    <!-- Slide row home -->
+                    <div class="col-sm-12 margin">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100" src="images/slidepizza1.jpg" style=" height:450px" alt="First slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="images/slidepizza2.jpg" style=" height:450px" alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="images/whypizza3.jpg" style=" height:450px" alt="Third slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="images/whypizza2.jpg" style=" height:450px" alt="Four slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="images/mon_y_1.jpg" style=" height:450px" alt="Five slide">
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Title what we offer -->
+                    <div class="col-sm-12 text-center p-4 mt-4">
+                        <h3><b class="p-2 border-bottom text-warning ">Tại sao lại chọn Pizza 365 ???</b></h3>
+                    </div>
+
+                    <!-- Content what we offer -->
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-3 p-4 bg-success border border-radius">
+                                <img src="images/whypizza1.jpg" alt="" style="max-width:240px; height:200px" class="text-center">
+                                <h3 class="p-2 text-center text-light">Hệ thống nhà hàng</h3>
+                                <p class="p-2 text-capitalize font-italic">Với hơn 100 chi nhánh phủ sóng khắp toàn quốc, chúng tôi sẽ đáp ứng nhu cầu thực khách trên khắp cả nước. Nhân viên phục vụ được đào tạo bài bàn theo quy cách của nhà hàng có trên 3 năm kinh nhiệm và có chứng chỉ IELS.
+                                </p>
+                            </div>
+
+                            <div class="col-sm-3 p-4 bg-info border border-radius">
+                                <img src="images/whypizza2.jpg" alt="" style="max-width:240px; height:200px" class="text-center">
+                                <h3 class="p-2 text-center text-light">An toàn thực phẩm</h3>
+                                <p class="p-2 text-capitalize font-italic">Thành phần chế biến và thực phẩm của chúng tôi đều được kiểm định chuẩn sạch và an toàn theo tiêu chuẩn Châu Âu. Các nguyên liệu đặc biệt của nhà hàng đều được nhập khẩu từ Châu Âu mỗi ngày.</p>
+                            </div>
+                            <div class="
+                            col-sm-3 p-4 bg-warning border border-radius">
+                                <img src="images/whypizza3.jpg" alt="" style="max-width:240px; height:200px" class="text-center">
+                                <h3 class="p-2 text-center text-light">Hương vị đặc biệt</h3>
+                                <p class="p-2 text-capitalize font-italic">Với công thức đặc biệt của đầu bếp người Ý sẽ mang đến cho bạn cùng người thân những món ăn chuẩn hương vị Châu Âu hòa cùng cảm giác như đang thưởng thức tại một nhà hàng giữa thủ đô ROME. </p>
+
+                            </div>
+                            <div class="col-sm-3 p-4 bg-danger border border-radius">
+                                <img src="images/whypizza4.jpg" alt="" style="max-width:240px; height:200px" class="text-center">
+                                <h3 class="p-2 text-center text-light">Phục vụ - Giao hàng nhanh</h3>
+                                <p class="p-2 text-capitalize font-italic">Với mỗi đơn hàng, chúng tôi đáp ứng được thời gian giao hàng trong 15 phút và quy cách vận chuyển với đội ngũ nhân viên chuyên nghiệp để thực khách luôn có được bữa ăn nóng hổi, tươi mới.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <div id="combo-pizza" class="row">
+                    <!-- Title what we offer -->
+                    <div class="col-sm-12 text-center p-4 mt-4 margin-top">
+                        <div class="margin-top">
+                            <h3><b class="p-2 border-bottom  bg-danger box-shadow text-light " style=" border-radius: 10px;">Menu Combo Pizza 365</b>
+                                <!-- <span><img src="images/pizza-combo.jpg " width="80px " alt=" "></span> -->
+                            </h3>
+                            <p><span class="p-2 text-light">Hãy chọn cỡ Pizza phù hợp với bạn!</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Content what we offer -->
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="card box-shadow">
+                                    <div class="card-header text-dark text-center" style=" background: linear-gradient(45deg, #de2d20, #e9d868, #51a2b7, #440772);">
+                                        <h3>SIZE S</h3>
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item"><b>Đường kính: 20cm</b> </li>
+                                            <li class="list-group-item"><b>Sườn nướng: 2</b> </li>
+                                            <li class="list-group-item"><b>Salat: 200gr</b> </li>
+                                            <li class="list-group-item"><b>Nước ngọt: 2</b> </li>
+                                            <li class="list-group-item">
+                                                <h2><b class="text-danger">VND: 150.000</b></h2>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <button id="btn-size-s" onclick="onBtnSizeSClick()" class="btn btn-success w-100"> Chọn</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card box-shadow">
+                                    <div class="card-header text-dark text-center" style=" background: linear-gradient(45deg, #de2d20, #e9d868, #51a2b7, #440772);">
+                                        <h3>SIZE M</h3>
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item"><b>Đường kính: 25cm</b> </li>
+                                            <li class="list-group-item"><b>Sườn nướng: 4</b> </li>
+                                            <li class="list-group-item"><b>Salat: 300gr</b> </li>
+                                            <li class="list-group-item"><b>Nước ngọt: 3</b> </li>
+                                            <li class="list-group-item">
+                                                <h2><b class="text-danger">VND: 200.000</b></h2>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <button id="btn-size-m" onclick="onBtnSizeMClick()" class="btn btn-success w-100"> Chọn</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card box-shadow">
+                                    <div class="card-header text-dark text-center" style=" background: linear-gradient(45deg, #de2d20, #e9d868, #51a2b7, #440772);">
+                                        <h3>SIZE L</h3>
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item"><b>Đường kính: 30cm</b> </li>
+                                            <li class="list-group-item"><b>Sườn nướng: 8</b> </li>
+                                            <li class="list-group-item"><b>Salat: 500gr</b> </li>
+                                            <li class="list-group-item"><b>Nước ngọt: 4</b> </li>
+                                            <li class="list-group-item">
+                                                <h2><b class="text-danger">VND: 250.000</b></h2>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <button id="btn-size-l" onclick="onBtnSizeLClick()" class="btn btn-success w-100"> Chọn</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <div id="pizza" class="row">
+                    <!-- Title Who We Are -->
+                    <div class="col-sm-12 text-center p-4 mt-4">
+                        <div class="margin-top">
+                            <h3><b class="p-2 border-bottom bg-warning text-light box-shadow" style="border-radius: 10px;"> Chọn loại Pizza của bạn</b>
+                                <!-- <span><img src="images/pizza-icon.jpg " width="100px " alt=" "></span> -->
+                            </h3>
+                        </div>
+                    </div>
+                    <!-- Content Who We Are -->
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="card w-100 box-shadow" style="width: 18rem;">
+                                    <img src="images/pizza_type_1.jpg" class="card-img-top">
+                                    <div class="card-body " style=" background: linear-gradient(45deg,  #f0ffd1, #fffceb, #ffd28b);">
+                                        <h3 class="text-success  font-weight-bold text-center">Pizza Hawai </h3> <br>
+                                        <h4 class="text-warning">Thành phần:</h4>
+                                        <p>
+                                            Jam bông, dứa, sốt cà chua, pho mai, xúc xích Salami, hành tây
+                                        </p>
+                                        <p>Hương vị Hawai cắn 1 miếng bạn sẽ thấy tiếng sóng vỗ bên tai.</p>
+                                        <p><button class="btn btn-info w-100" id="btn-hawai" onclick="onBtnHaiwaiClick()">Chọn</button></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card w-100 box-shadow" style="width: 18rem;">
+                                    <img src="images/pizza_type_2.jpg" class="card-img-top">
+                                    <div class="card-body " style=" background: linear-gradient(45deg,  #f0ffd1, #fffceb, #ffc76c);">
+                                        <h3 class="text-info font-weight-bold text-center">Pizza Hải Sản</h3> <br>
+                                        <h4 class="text-warning">Thành phần:</h4>
+                                        <p>
+                                            Mực, tôm, ớt xanh, hành tây, cà chua, sốt cà chua, pho mai.
+                                        </p>
+                                        <p>Hải sản tươi ngon kết hợp với phô mai tạo nên hương vị đặc biệt.</p>
+                                        <p><button class="btn btn-info w-100" id="btn-hai-san" onclick="onBtnHaiSanClick()">Chọn</button></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card w-100 box-shadow" style="width: 18rem;">
+                                    <img src="images/pizza_type_3.jpg" class="card-img-top">
+                                    <div class="card-body " style=" background: linear-gradient(45deg,  #f0ffd1, #fffceb, #ffc76c);">
+                                        <h3 class="text-danger font-weight-bold text-center">Pizza Thịt Hun Khói</h3> <br>
+                                        <h4 class="text-warning">Thành phần:</h4>
+                                        <p>
+                                            Thịt bò hun khói, hành tây, nấm, sốt cà chua, pho mai.
+                                        </p>
+                                        <p>Pizza thịt hun khói, hương vị truyền thống. Vị ngon trong từng thớ thịt</p>
+                                        <p><button class="btn btn-info w-100" id="btn-thit-hun-khoi" onclick="onBtnThitHunKhoiClick()">Chọn</button></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br><br>
+
+                <!-- Đồ uống -->
+
+                <div class="row form-group ">
+                    <div class="col-sm-12 text-center p-4 mt-4">
+                        <h3 for="select-category "> <b class="p-2 border-bottom  bg-danger box-shadow text-light " style=" border-radius: 10px;"> Đồ uống</b></h3>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-3"></div>
+
+                            <div class="col-sm-6">
+                                <select id="select-drink" class="form-control ">
+                            <option value="none">Hãy chọn đồ uống</option>
+                        </select>
+                            </div>
+
+                            <div class="col-sm-3"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <div id="don-hang" class="row">
+                    <!-- Title Contact Us -->
+                    <div class="col-sm-12 text-center p-4 mt-4">
+                        <div class="margin-top">
+                            <h2><b class="p-2 border-bottom text-uppercase text-light">Gửi đơn hàng</b></h2>
+                        </div>
+                    </div>
+
+                    <!-- Content Contact Us -->
+                    <div class="col-sm-12 p-2 jumbotron box-shadow">
+                        <div class="row ">
+                            <div class="col-sm-12 ">
+                                <div class="form-group">
+                                    <label for="fullname">Họ và tên</label>
+                                    <input type="text" class="form-control" id="inp-fullname" placeholder="Họ và tên">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="text" class="form-control" id="inp-email" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="dien-thoai">Điện thoại</label>
+                                    <input type="text" class="form-control" id="inp-dien-thoai" placeholder="Điện thoại">
+                                </div>
+                                <div class="form-group">
+                                    <label for="dia-chi">Địa chỉ</label>
+                                    <input type="text" class="form-control" id="inp-dia-chi" placeholder="Địa chỉ">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Lời nhắn</label>
+                                    <input type="text" class="form-control" id="inp-message" placeholder="Lời nhắn">
+                                </div>
+                                <div class="form-group">
+                                    <label for="voucherID">Mã giãm giá (VoucherID)</label>
+                                    <input type="text" class="form-control" id="inp-voucherID" placeholder="Mã giãm giá">
+                                </div>
+
+                                <button type="button" class="btn btn-info w-100" id="btn-gui-don" onclick="onBtnKiemTraDon()">Gửi đơn</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <!-- vùng hiển thị thông tin đơn hàng(order) -->
+                    <div id="div-container-order" class="container bg-light p-2 jumbotron box" style="display: none; Box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) ">
+
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-4 border border-danger">
+                                    <div id="div-order-infor-user" class="text-black p-3 font-weight-bold ">...</div>
+                                </div>
+
+                                <div class="col-sm-4 border border-danger">
+                                    <div id="div-order-infor-products" class="text-black p-3 ">...</div>
+                                </div>
+
+                                <div class="col-sm-4 border border-danger">
+                                    <div id="div-order-infor-prices" class="text-danger p-3 ">...</div>
+                                    <img src="images/BgPizaa.jpg" alt="" class="bg-pizza" style="width:100px;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-2">
+                            <button type="button" class="btn btn-warning w-100" id="btn-xac-nhan" onclick="onBtnXacNhanClick()"> Xác nhận</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <br>
+
+                <!-- vùng hiển thị lời cảm ơn và hiện mã đơn hàng -->
+                <div id="div-container-orderid" class="container bg-orderid " style="display: none; width: 700px;">
+                    <h3 class="text-center text-com-on font-weight-bold">Cảm ơn bạn đã đặt hàng tại Pizza 365 !!!</h3>
+                    <br>
+                    <h5 class="ma_don">Mã đơn hàng của bạn là: </h5>
+
+                    <div id="ma-don-hang" class="col-sm-12">
+
+                        <div class="row">
+                            <div class="col-sm-4"></div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control col-sm8 text-center" id="inp-orderid" placeholder="Mã đơn hàng">
+                            </div>
+                            <div class="col-sm-4"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- Footer -->
+    <div class="container-fluid bg-light">
+        <div class="row text-center">
+            <div class="col-sm-12">
+                <h4 class="m-2">Footer</h4>
+                <a href="#" class="btn btn-dark m-3"><i class="fa fa-arrow-up"></i>To the top</a>
+                <div class="m-2">
+                    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+                    <i class="fa fa-instagram w3-hover-opacity"></i>
+                    <i class="fa fa-snapchat w3-hover-opacity"></i>
+                    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+                    <i class="fa fa-twitter w3-hover-opacity"></i>
+                    <i class="fa fa-linkedin w3-hover-opacity"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        "use strict";
+        /*** REGION 1 - Global variables - Vùng khai báo biến, hằng số, tham số TOÀN CỤC */
+
+        // Biến lưu trữ combo được chọn, mỗi khi khách chọn bạn lại đổi giá trị properties của nó
+        var gSelectedMenuStructure = {
+            menuName: "...", // S, M, L
+            duongKinhCM: 0,
+            suongNuong: 0,
+            saladGr: 0,
+            drink: 0,
+            priceVND: 0
+        };
+
+        // Biến dùng để lưu loại pizza đươc chọn, mỗi khi khách chọn, bạn lại đổi giá trị cho nó
+
+        // biến toàn cục giá tiền sau khi đc giãm
+        var gDiscout = {
+            voucherID: "",
+            percentDiscount: 0,
+            priceVND: 0
+        };
+
+        var gSelectedPizzaType = "...";
+
+        // Biến toàn cực thông tin người đặt hàng
+        const gDONHANG_DB = {
+            fullName: "",
+            email: "",
+            dienThoai: -1,
+            diaChi: "",
+            message: "",
+            voucherID: "",
+            drink: "",
+        };
+
+        // Biến toàn cực đơn hàng
+        const gObjectRequest = {
+            kichCo: "",
+            duongKinh: "",
+            suon: "",
+            salad: "",
+            loaiPizza: "",
+            idVourcher: "",
+            idLoaiNuocUong: "",
+            soLuongNuoc: "",
+            hoTen: "",
+            thanhTien: "",
+            email: "",
+            soDienThoai: "",
+            diaChi: "",
+            loiNhan: ""
+        };
+
+        //Biến toàn cục OrderDetail
+        var gOrderDetail = {
+            id: "",
+            orderId: ""
+        }
+
+        //LINK VOUCHER
+
+        const gREQUEST_STATUS_OK = 200; // GET & PUT success
+        const gREQUEST_READY_STATUS_FINISH_AND_OK = 4;
+        const gREQUEST_CREATE_SUCCESS = 201; // status 201 tao thanh cong
+
+        /*** REGION 2 - Vùng gán / thực thi hàm xử lý sự kiện cho các elements */
+
+
+        /*** REGION 3 - Event handlers - Vùng khai báo các hàm xử lý sự kiện */
+        function onPageLoading() {
+            // LINK DRINK
+            const vBASE_URL = "http://42.115.221.44:8080/devcamp-pizza365/drinks";
+
+            var vXmlHttp = new XMLHttpRequest();
+            vXmlHttp.open("GET", vBASE_URL, true);
+            vXmlHttp.send();
+            vXmlHttp.onreadystatechange = function() {
+                if (this.readyState == gREQUEST_READY_STATUS_FINISH_AND_OK && this.status == gREQUEST_STATUS_OK) {
+                    console.log(vXmlHttp.responseText);
+
+                    //chuyển JSON sang Object
+                    var vSelectObject = JSON.parse(vXmlHttp.responseText);
+
+                    //truy xuất select qua id
+                    var vSelectDrink = document.getElementById("select-drink");
+                    for (let bI = 0; bI < vSelectObject.length; bI++) {
+                        //thêm option vào thể select
+                        var vDrinkOption = document.createElement("option");
+                        vDrinkOption.value = vSelectObject[bI].maNuocUong;
+                        vDrinkOption.text = vSelectObject[bI].tenNuocUong;
+                        vSelectDrink.appendChild(vDrinkOption);
+                    }
+                }
+            }
+
+        }
+
+        //HÀM SỰ KIỆN KHI NHẤN NÚT CHỌN COMBO
+
+        // hàm sự kiện khi nhán nút chọn combo S
+        function onBtnSizeSClick() {
+            var vComboS = {
+                menuName: "Small",
+                duongKinhCM: "20cm",
+                suonNuong: 2,
+                saladGr: "200gr",
+                drink: 2,
+                priceVND: 150000
+            }
+            var vColorBtn = "Small"
+            changeColorBtnCombo(vColorBtn);
+
+            gSelectedMenuStructure = vComboS;
+
+            console.log(gSelectedMenuStructure);
+
+        }
+
+        // hàm sự kiện khi nhán nút chọn combo M
+        function onBtnSizeMClick() {
+            var vComboM = {
+                menuName: "Medium",
+                duongKinhCM: "25cm",
+                suonNuong: 4,
+                saladGr: "300gr",
+                drink: 2,
+                priceVND: 200000
+            }
+
+            var vColorBtn = "Medium"
+            changeColorBtnCombo(vColorBtn);
+
+            gSelectedMenuStructure = vComboM;
+
+            console.log(gSelectedMenuStructure);
+        }
+
+        // hàm sự kiện khi nhán nút chọn combo L
+        function onBtnSizeLClick() {
+            var vComboL = {
+                menuName: "Large",
+                duongKinhCM: "30cm",
+                suonNuong: 8,
+                saladGr: "500gr",
+                drink: 4,
+                priceVND: 250000
+            }
+
+            var vColorBtn = "Large"
+            changeColorBtnCombo(vColorBtn);
+
+            gSelectedMenuStructure = vComboL;
+
+            console.log(gSelectedMenuStructure);
+
+        }
+
+        //HÀM SỰ KIỆN KHI NHẤN NÚT CHỌN LOẠI PIZZA
+
+        // hàm sự kiện khi nhán nút chọn pizza Hawai
+        function onBtnHaiwaiClick() {
+
+            var vColorBtn = "Hawai"
+            changeColorBtnPizza(vColorBtn);
+            console.log(gSelectedMenuStructure);
+            gSelectedPizzaType = "Pizza Hawai";
+        }
+
+        // hàm sự kiện khi nhán nút chọn pizza Hải Sản
+        function onBtnHaiSanClick() {
+
+            var vColorBtn = "HaiSan"
+            changeColorBtnPizza(vColorBtn);
+            console.log(gSelectedMenuStructure);
+            gSelectedPizzaType = "Pizza Hải Sản";
+
+        }
+
+        // hàm sự kiện khi nhán nút chọn pizza Thịt Xông Khói
+        function onBtnThitHunKhoiClick() {
+
+            var vColorBtn = "ThitXongKhoi"
+            changeColorBtnPizza(vColorBtn);
+            console.log(gSelectedMenuStructure);
+            gSelectedPizzaType = "Pizza Thịt Hun Khói";
+
+        }
+
+
+        // HÀM SỰ KIỆN NỨT GỬI  ĐƠN HÀNG
+        function onBtnKiemTraDon() {
+
+            // Truy xuất form data user order
+            var vPerson = getDataUserOrder(gDONHANG_DB);
+
+            //Kiểm tra data user
+            validateDataUserOrder(gDONHANG_DB);
+            var vCheckValiDate = validateDataUserOrder(gDONHANG_DB);
+
+            //hiển thị thông tin ra:
+            if (vCheckValiDate) {
+
+                // hàm xử lý voucher
+                xuLyDataVoucher(gDONHANG_DB, gSelectedMenuStructure, gDiscout);
+
+                //hiện thông tin ra
+                showDataUserOrder(gDONHANG_DB, gSelectedMenuStructure, gSelectedPizzaType, gDiscout)
+
+            }
+        }
+
+        // HÀM SỰ KIỆN NỨT GỬI  ĐƠN HÀNG
+        function onBtnXacNhanClick() {
+
+            // var vBody = document.getElementById("all");
+            // vBody.style.opacity = "0.5";
+
+
+            // Bước 1: đọc dữ liệu
+            var vPerson = document.getElementById("div-order-infor-user").innerHTML;
+            var vProducts = document.getElementById("div-order-infor-products").innerHTML;
+            var vPrice = document.getElementById("div-order-infor-prices").innerHTML;
+            console.log(vPerson);
+            console.log(vProducts);
+            console.log(vPrice);
+            console.log(gObjectRequest);
+
+            // Bước 2: Điều kiện
+            //Bước 3: Call API
+            var vXmlHttpCreatOrder = new XMLHttpRequest();
+            callApiCreatOrder(gObjectRequest, vXmlHttpCreatOrder);
+            vXmlHttpCreatOrder.onreadystatechange = function() {
+                if (this.readyState == gREQUEST_READY_STATUS_FINISH_AND_OK && this.status == gREQUEST_CREATE_SUCCESS) {
+                    console.log(vXmlHttpCreatOrder.responseText);
+
+                    // Bước 4: Hiển thị dữ liệu form order
+                    showOrderId(vXmlHttpCreatOrder, gOrderDetail);
+                }
+            }
+        }
+
+        // HÀM SỰ KIỆN NÚT ORDER DETAIL
+        function onBtnOrderDetailClick() {
+            var vLink = "(Bai_Lam)_OrderDetail.html";
+            window.location.href = vLink + "?" + "id=" + gOrderDetail.id + "&" + "orderId=" + gOrderDetail.orderId
+        }
+
+        /*** REGION 4 - Common funtions - Vùng khai báo hàm dùng chung trong toàn bộ chương trình*/
+
+        // Hàm đổi màu button combo để phân biệt nút được chọn
+        function changeColorBtnCombo(paramColor) {
+            //truy xuất phần tử button ở các combo
+            var vBtnSizeS = document.getElementById("btn-size-s");
+            var vBtnSizeM = document.getElementById("btn-size-m");
+            var vBtnSizeL = document.getElementById("btn-size-l");
+
+            // check điều kiện để đổi màu nút
+            if (paramColor == "Small") {
+                vBtnSizeS.className = "btn btn-warning w-100";
+                vBtnSizeM.className = "btn btn-success w-100";
+                vBtnSizeL.className = "btn btn-success w-100";
+
+            } else if (paramColor == "Medium") {
+                vBtnSizeS.className = "btn btn-success w-100";
+                vBtnSizeM.className = "btn btn-warning w-100";
+                vBtnSizeL.className = "btn btn-success w-100";
+
+            } else if (paramColor == "Large") {
+                vBtnSizeS.className = "btn btn-success w-100";
+                vBtnSizeM.className = "btn btn-success w-100";
+                vBtnSizeL.className = "btn btn-warning w-100";
+            }
+        }
+
+        // Hàm đổi màu button combo để phân biệt nút được chọn
+        function changeColorBtnPizza(paramColor) {
+            //truy xuất phần tử button ở các combo
+            var vBtnPizzaHawai = document.getElementById("btn-hawai");
+            var vBtnPizzaHaiSan = document.getElementById("btn-hai-san");
+            var vBtnPizaaThitXongKhoi = document.getElementById("btn-thit-hun-khoi");
+
+            // check điều kiện để đổi màu nút
+            if (paramColor == "Hawai") {
+                vBtnPizzaHawai.className = "btn btn-warning w-100";
+                vBtnPizzaHaiSan.className = "btn btn-info w-100";
+                vBtnPizaaThitXongKhoi.className = "btn btn-info w-100";
+
+            } else if (paramColor == "HaiSan") {
+                vBtnPizzaHawai.className = "btn btn-info w-100";
+                vBtnPizzaHaiSan.className = "btn btn-warning w-100";
+                vBtnPizaaThitXongKhoi.className = "btn btn-info w-100";
+
+            } else if (paramColor == "ThitXongKhoi") {
+                vBtnPizzaHawai.className = "btn btn-info w-100";
+                vBtnPizzaHaiSan.className = "btn btn-info w-100";
+                vBtnPizaaThitXongKhoi.className = "btn btn-warning w-100";
+            }
+        }
+
+        // TẠO CÁC HÀM CHO NÚT GỦI ĐƠN
+        function getDataUserOrder(paramDataUser) {
+            // BƯỚC 1: ĐỌC DỮ LIỆU
+            //Truy xuất phần tử thông qua ID
+            var vFullName = document.getElementById("inp-fullname");
+            var vEmail = document.getElementById("inp-email");
+            var vDienThoai = document.getElementById("inp-dien-thoai");
+            var vDiaChi = document.getElementById("inp-dia-chi");
+            var vMessage = document.getElementById("inp-message");
+            var vVoucherID = document.getElementById("inp-voucherID");
+            var vNuocNgot = document.getElementById("select-drink");
+
+            //Lấy giá trị
+            var vFullNameValue = vFullName.value.trim();
+            var vEmailValue = vEmail.value.trim();
+            var vDienThoaiValue = vDienThoai.value.trim();
+            var vDiaChiValue = vDiaChi.value.trim();
+            var vMessageValue = vMessage.value.trim();
+            var vNuocNgotValue = vNuocNgot.value.trim();
+            var vVoucherIDValue = vVoucherID.value.trim();
+
+            // BƯỚC 2 : LƯU DỮ LIỆU VÀO BIẾN TOẰN CỰC
+            paramDataUser.fullName = vFullNameValue;
+            paramDataUser.email = vEmailValue;
+            paramDataUser.dienThoai = vDienThoaiValue;
+            paramDataUser.diaChi = vDiaChiValue;
+            paramDataUser.message = vMessageValue;
+            paramDataUser.nuocngot = vNuocNgot.value;
+            paramDataUser.voucherID = vVoucherIDValue;
+        }
+
+        //BƯỚC 3 : ĐIỀU KIỆN VÀ HIỂN THỊ DỮ LIỆU
+        function validateDataUserOrder(paramDataUser) {
+
+            // check điều kiện nhập thiếu thông tin
+            if (paramDataUser.fullName == "") {
+                alert("Hãy nhập tên của bạn");
+                return false;
+            } else if (paramDataUser.email == "") {
+                alert("Hãy nhập email của bạn");
+                return false;
+
+            } else if (paramDataUser.dienThoai == "") {
+                alert("Hãy nhập số điện thoại của bạn");
+                return false;
+
+            } else if (paramDataUser.diaChi == "") {
+                alert("Hãy nhập địa chỉ của bạn");
+                return false;
+
+            } else if (paramDataUser.nuocngot == "none") {
+                alert("Hãy chọn nước ngọt để bữa ăn ngon hơn!");
+                return false;
+
+            }
+            // check điều kiện email
+            if (paramDataUser.email.includes("@")) {
+                // return true;
+            } else {
+                alert("Email phải có @");
+            }
+
+            if (isNaN(paramDataUser.dienThoai)) {
+                alert("Số điện thoại phải nhập số");
+            }
+            return paramDataUser
+        }
+
+        //Hàm hiển thị thông tin đơn hàng
+        function showDataUserOrder(paramDataUser, paramSelectedMenuStructure, paramSelectType, paramDiscount) {
+            var vResultInfoUser = document.getElementById("div-order-infor-user");
+            var vResultInfoProducts = document.getElementById("div-order-infor-products");
+            var vResultInfoPrices = document.getElementById("div-order-infor-prices");
+
+            var vContainer = document.getElementById("div-container-order");
+            var vSelecDrink = document.getElementById("select-drink");
+
+            vContainer.style.display = "block";
+
+            //hiển thị thông tin ra:
+
+            vResultInfoUser.innerHTML =
+                "Họ và Tên: " + paramDataUser.fullName + "<br>" +
+                "Email: " + paramDataUser.email + "<br>" +
+                "Điện thoại: " + paramDataUser.dienThoai + "<br>" +
+                "Địa chỉ: " + paramDataUser.diaChi + "<br>" +
+                "Lời nhắn: " + paramDataUser.message + "<br>";
+
+            vResultInfoProducts.innerHTML =
+                "Menu name: " + paramSelectedMenuStructure.menuName + "<br>" +
+                "Đường kính Pizza: " + paramSelectedMenuStructure.duongKinhCM + "<br>" +
+                "Sường nướng: " + paramSelectedMenuStructure.suonNuong + "<br>" +
+                "Salad: " + paramSelectedMenuStructure.saladGr + "gr" + "<br>" +
+                "Nước ngọt: " + paramSelectedMenuStructure.drink + "<br>" +
+                "Giá tiền: " + paramSelectedMenuStructure.priceVND + "<br>" +
+                "<hr>" +
+                "Loai Pizza: " + paramSelectType + "<br>" +
+                "<hr>" +
+                "Loại nước uống: " + vSelecDrink.value + "<br>";
+
+            vResultInfoPrices.innerHTML =
+                "Giá tiền: " + paramSelectedMenuStructure.priceVND + "<br>" +
+                "Mã giãm giá: " + paramDataUser.voucherID + "<br>" +
+                "Phần trăm giảm giá: " + paramDiscount.percentDiscount + "%" + "<br>" +
+                "Số tiền thanh toán: " + paramDiscount.priceVND + "VNĐ";
+
+            // gán vào biến toàn cục thông tin order
+
+            gObjectRequest.kichCo = paramSelectedMenuStructure.menuName;
+            gObjectRequest.duongKinh = paramSelectedMenuStructure.duongKinhCM;
+            gObjectRequest.suon = paramSelectedMenuStructure.suonNuong;
+            gObjectRequest.salad = paramSelectedMenuStructure.saladGr;
+            gObjectRequest.loaiPizza = paramSelectType;
+            gObjectRequest.idVourcher = paramDataUser.voucherID;
+            gObjectRequest.idLoaiNuocUong = vSelecDrink.value;
+            gObjectRequest.soLuongNuoc = paramSelectedMenuStructure.drink;
+            gObjectRequest.hoTen = paramDataUser.fullName;
+            gObjectRequest.thanhTien = paramDiscount.priceVND;
+            gObjectRequest.email = paramDataUser.email;
+            gObjectRequest.soDienThoai = paramDataUser.dienThoai;
+            gObjectRequest.diaChi = paramDataUser.diaChi;
+            gObjectRequest.loiNhan = paramDataUser.message;
+        }
+
+        // HÀM XỬ LÝ VOUCHER
+        function xuLyDataVoucher(paramDataUser, paramSelectedMenuStructure, paramDiscout) {
+
+            const vBASE_URL = "http://42.115.221.44:8080/devcamp-voucher-api/voucher_detail";
+
+            // khai báo gửi thông tin lên sever
+            var vXmlHttp = new XMLHttpRequest();
+            vXmlHttp.open("GET", vBASE_URL + "/" + paramDataUser.voucherID, false);
+            vXmlHttp.send(null);
+
+            // nhận dữ liệu sever trả về
+            var vJsonStringResponse = vXmlHttp.responseText;
+            console.log("responeText :" + vJsonStringResponse);
+
+            //chuyển sang Object
+            if (vXmlHttp.status == gREQUEST_STATUS_OK) {
+
+                var vResponseObject = JSON.parse(vJsonStringResponse);
+                console.log(vResponseObject);
+
+                //gán giá trị voucher mới nhận từ sever vào biến gDicout
+                console.log(paramSelectedMenuStructure.priceVND)
+                paramDiscout.voucherID = vResponseObject.voucherID;
+                paramDiscout.percentDiscount = parseInt(vResponseObject.phanTramGiamGia);
+                paramDiscout.priceVND = paramSelectedMenuStructure.priceVND - (paramSelectedMenuStructure.priceVND * (vResponseObject.phanTramGiamGia * 0.01))
+
+                return paramDiscout;
+
+            } else {
+
+                paramDiscout.voucherID = "voucher không tồn tại";
+                paramDiscout.percentDiscount = 0;
+                paramDiscout.priceVND = paramSelectedMenuStructure.priceVND;
+
+                return paramDiscout;
+            }
+
+        }
+
+        // CÁC HÀM NÚT GỬI ĐƠN
+
+        // Call API Order
+        function callApiCreatOrder(paramObjectRequest, paramXmlHttp) {
+            //Link Order
+            const vBASE_URL = "http://42.115.221.44:8080/devcamp-pizza365/orders";
+
+            paramXmlHttp.open("POST", vBASE_URL, true);
+            paramXmlHttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            paramXmlHttp.send(JSON.stringify(paramObjectRequest));
+
+        }
+
+        // Show dữ liệu Order
+        function showOrderId(vXmlHttpCreatOrder, paramOrderDetail) {
+            // Chuyển Object sang JSON
+            var vResponseCreatOrder = JSON.parse(vXmlHttpCreatOrder.responseText);
+
+            var vFormOrderID = document.getElementById("div-container-orderid");
+            var vInpOrderID = document.getElementById("inp-orderid");
+            var vContainer = document.getElementById("div-container-order");
+
+            vFormOrderID.style.display = "block";
+            vContainer.style.display = "none";
+            vInpOrderID.value = vResponseCreatOrder.orderId;
+
+            paramOrderDetail.id = vResponseCreatOrder.id;
+            paramOrderDetail.orderId = vResponseCreatOrder.orderId;
+        }
+    </script>
+</body>
+
+</html>

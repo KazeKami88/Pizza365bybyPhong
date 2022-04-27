@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Detail(by Hoàng)</title>
+    <!-- font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- CSS  -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-image: url("https://scx2.b-cdn.net/gfx/news/2019/galaxy.jpg");
+        }
+        
+        #header {
+            width: 100%;
+            height: 60px;
+            background-color: #3d3a3a;
+            margin-bottom: 80px;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+        }
+        
+        a.home {
+            text-decoration: none;
+        }
+        
+        .text-home {
+            opacity: 0.6;
+            color: rgb(0, 255, 0);
+            padding-left: 50px;
+        }
+        
+        .text-home:hover {
+            /* color: rgb(255, 85, 0); */
+            opacity: 1;
+        }
+        
+        .box-shadow {
+            Box-shadow: 20px 20px rgba(15, 255, 51, 0.6)
+        }
+    </style>
+</head>
+
+<body onload="onPageLoading()">
+
+    <body onload="onPageLoading()">
+
+        <!-- QUAY LẠI  -->
+        <div id="header">
+            <a class="home" href="(Bai_Lam)_Pizza365index.html">
+                <h3 class="text-home text-uppercase">Trang Pizza</h3>
+            </a>
+        </div>
+
+        <!-- ORDER DETAIL -->
+        <div class="container jumbotron box-shadow">
+
+            <div class="form-group ">
+                <div class="text-center mb-5">
+                    <h1>Order Detail !!!</h1>
+                    <div class="col-sm-12 bg-warning text-center text-light"> Cảm ơn quý khách đã sử dụng dịch vụ của chúng tôi</div>
+                </div>
+            </div>
+
+
+
+            <form>
+                <div class="row">
+                    <div class="col-sm-6">
+
+                        <div class="row form-group">
+                            <label for="" class="col-sm-5 col-form-label">Order ID (Mã đơn hàng)</label>
+                            <input type="text" class="col-sm-5 form-control" id="inp-orderID" />
+                        </div>
+
+                        <div class="row form-group">
+                            <label for="" class="col-sm-5 col-form-label">Cỡ Combo</label>
+                            <input type="text" class="col-sm-5 form-control" id="inp-combo" />
+                        </div>
+
+                        <div class="row form-group">
+                            <label for="" class="col-sm-5 col-form-label">Đồ uống</label>
+                            <input type="text" class="col-sm-5 form-control" id="inp-drink" />
+                        </div>
+
+                        <div class="row form-group">
+                            <label for="" class="col-sm-5 col-form-label">Voucher ID</label>
+                            <input type="text" class="col-sm-5 form-control" id="inp-voucherID" />
+                        </div>
+
+                        <div class="row form-group">
+                            <label for="" class="col-sm-5 col-form-label">Giảm giá(discount)(VNĐ)</label>
+                            <input type="text" class="col-sm-5 form-control" id="inp-giam-gia" />
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-6">
+
+                        <div class="row form-group">
+                            <label for="" class="col-sm-5 col-form-label">Loại Pizza</label>
+                            <input type="text" class="col-sm-5 form-control" id="inp-pizza" />
+                        </div>
+
+                        <div class="row form-group">
+                            <label for="" class="col-sm-5 col-form-label">Đường Kính Pizza(cm)</label>
+                            <input type="text" class="col-sm-5 form-control" id="inp-duong-kinh" />
+                        </div>
+
+                        <div class="row form-group">
+                            <label for="" class="col-sm-5 col-form-label">Salad(g)</label>
+                            <input type="text" class="col-sm-5 form-control" id="inp-salad" />
+                        </div>
+
+                        <div class="row form-group">
+                            <label for="" class="col-sm-5 col-form-label">Số lượng nước uống</label>
+                            <input type="text" class="col-sm-5 form-control" id="inp-so-luong-nuoc" />
+                        </div>
+
+                        <div class="row form-group">
+                            <label for="" class="col-sm-5 col-form-label">Sườn nướng (miếng)</label>
+                            <input type="text" class="col-sm-5 form-control" id="inp-suon" />
+                        </div>
+
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+        <br> <br>
+        <div class="container bg-info" style=" box-shadow:0 0 50px rgba(188, 5, 255, 0.8)">
+            <div class="row form-group bg-primary text-white  text-center outline-success">
+                <label class="col-sm-5 col-form-label font-weight-bold ">THÀNH TIỀN(VNĐ)</label>
+                <input type="text" class="col-sm-4 form-control font-weight-bold text-center" id="inp-prices" style="font-size:20px" value="0 VNĐ" />
+                <label class="col-sm-3 col-form-label font-weight-bold"><span class="text-">Đã  áp  dụng  mã  giảm  giá<span></label>
+            </div>
+        </div>
+
+        <br> <br>
+
+        <div class="container jumbotron box-shadow">
+            <div class="text-center mb-5">
+                <h4>Thông tin của khách hàng</h4>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="row form-group">
+                        <label class="col-sm-4 col-form-label" for="">Họ và tên</label>
+                        <input id="inp-fullname" type="text" class="form-control col-sm-6" placeholder="Họ và tên" />
+                    </div>
+
+                    <div class="row form-group">
+                        <label class="col-sm-4 col-form-label" for="">Số điện thoại</label>
+                        <input id="inp-mobile" type="number" class="form-control col-sm-6" placeholder="Số ĐT" />
+                    </div>
+
+                    <div class="row form-group">
+                        <label class="col-sm-4 col-form-label" for="">Email</label>
+                        <input id="inp-email" type="email" class="form-control col-sm-6" placeholder="email" />
+                    </div>
+
+                    <div class="row form-group">
+                        <label class="col-sm-4 col-form-label" for="">Địa chỉ</label>
+                        <input id="inp-address" type="text" class="form-control col-sm-6" placeholder="Địa chỉ" />
+                    </div>
+
+                </div>
+
+                <div class="col-sm-6">
+
+                    <div class="row form-group">
+                        <label class="col-sm-4 col-form-label">Lời nhắn</label>
+                        <input id="inp-message" class="col-sm-6 form-control" placeholder="Lời nhắn" />
+                    </div>
+
+                    <div class="row form-group">
+                        <label class="col-sm-4 col-form-label">Trạng thái đơn hàng</label>
+                        <input id="inp-status" class="col-sm-6 form-control" placeholder="" />
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-sm-4 col-form-label">Ngày tạo đơn</label>
+                        <input id="inp-creat-order" class="col-sm-6 form-control" placeholder="" type="date" />
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-sm-4 col-form-label">Ngày Cập nhật</label>
+                        <input id="inp-update" class="col-sm-6 form-control" placeholder="" type="date" />
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <br> <br>
+
+        <div class="container bg-info">
+            <div class="row form-group bg-primary text-white  text-center outline-success">
+                <button type="button" for="" class="col-sm-6 form-control font-weight-bold bg-success text-white" style="font-size:20px" onclick="onBtnUpdateConfirmOrderClick()">Confirm</button>
+                <button type="button" class="col-sm-6  font-weight-bold bg-danger text-white" id="" style="font-size:20px" onclick="onBtnCancelOrderClick()">Cancel</button>
+            </div>
+        </div>
+
+        <br> <br>
+
+        <!-- Footer -->
+        <div class="container-fluid bg-light">
+            <div class="row text-center">
+                <div class="col-sm-12">
+                    <h4 class="m-2">Footer</h4>
+                    <a href="#" class="btn btn-dark m-1"><i class="fa fa-arrow-up"></i>To the top</a>
+                    <div class="m-2">
+                        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+                        <i class="fa fa-instagram w3-hover-opacity"></i>
+                        <i class="fa fa-snapchat w3-hover-opacity"></i>
+                        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+                        <i class="fa fa-twitter w3-hover-opacity"></i>
+                        <i class="fa fa-linkedin w3-hover-opacity"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+    <script>
+        /*** REGION 1 - Global variables - Vùng khai báo biến, hằng số, tham số TOÀN CỤC */
+
+        const gREQUEST_STATUS_OK = 200;
+        const gREQUEST_READY_STATUS_FINISH_AND_OK = 4;
+        const gREQUEST_CREATE_SUCCESS = 201;
+        const gBASE_URL = "http://42.115.221.44:8080/devcamp-pizza365/orders";
+
+        var gOrderInfo = {
+            orderId: "",
+            id: ""
+        }
+
+        /*** REGION 2 - Vùng gán / thực thi sự kiện cho các elements */
+
+
+        /*** REGION 3 - Event handlers - Vùng khai báo các hàm xử lý sự kiện */
+
+        function onPageLoading() {
+
+            // Bước 1: đọc dữ liệu
+            getIdByLink(gOrderInfo);
+
+            // Bước 2: Check điều kiện
+            valiDateDetail(gOrderInfo);
+            var vCheckValiDate = valiDateDetail(gOrderInfo);
+
+            if (vCheckValiDate) {
+
+                //Bước 3:  Call API
+                var vXmlHttp = new XMLHttpRequest();
+                callApiGetDataOrder(vXmlHttp, gOrderInfo);
+                vXmlHttp.onreadystatechange = function() {
+                    if (this.readyState == gREQUEST_READY_STATUS_FINISH_AND_OK && this.status == gREQUEST_STATUS_OK) {
+                        console.log(vXmlHttp.responseText);
+
+                        //Bước 4: Hiển thị dữ liệu
+                        showDataOrderDetailByOrderID(vXmlHttp.responseText);
+                    }
+                }
+            }
+        }
+
+        function getIdByLink(paramOrderInfo) {
+
+            var vLinkOrderDetail = window.location.href;
+            console.log("%c URL là: " + vLinkOrderDetail, "color:blue");
+
+            var vUrlOrderDetail = new URL(vLinkOrderDetail);
+
+            var vOrderIdDetail = vUrlOrderDetail.searchParams.get("orderId");
+            console.log("Order ID là: " + vOrderIdDetail);
+
+            var vIdDetail = vUrlOrderDetail.searchParams.get("id");
+            console.log(" ID Voucher là: " + vIdDetail);
+
+            paramOrderInfo.orderId = vOrderIdDetail;
+            paramOrderInfo.id = vIdDetail;
+
+            console.log(paramOrderInfo);
+
+        }
+        //Hàm sự kiện click Confirm Xác nhận đơn hàng
+        function onBtnUpdateConfirmOrderClick() {
+            console.log("Nút Confirm được ấn!!!");
+            // bước 1:
+            console.log("Mã OrderID của đơn hàng:" + gOrderInfo.id);
+
+            var vObjectRequest = {
+                trangThai: "Confirmed" //3 trang thai open, confirmed, cancel
+            }
+            console.log("Trạng thái đơn hàng:" + vObjectRequest.trangThai);
+
+
+            var vXmlHttpUpdateOrder = new XMLHttpRequest();
+            vXmlHttpUpdateOrder.open("PUT", gBASE_URL + "/" + gOrderInfo.id);
+            vXmlHttpUpdateOrder.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            vXmlHttpUpdateOrder.send(JSON.stringify(vObjectRequest));
+            vXmlHttpUpdateOrder.onreadystatechange =
+                function() {
+                    if (this.readyState == gREQUEST_READY_STATUS_FINISH_AND_OK && this.status == gREQUEST_STATUS_OK) {
+
+                        alert("Update đơn hàng thành công: " + vXmlHttpUpdateOrder.responseText);
+                        var vUpdatedOrder = vXmlHttpUpdateOrder.responseText;
+                        console.log(vUpdatedOrder);
+                        window.location.replace("(Bai_Lam)-DanhSanhDonHang.html");
+                    }
+                }
+        }
+
+        //Hàm sự kiện click Cancel hủy đơn hàng
+        function onBtnCancelOrderClick() {
+            console.log("Nút Cancel được ấn!!!");
+            // bước 1:
+            console.log("Mã OrderID của đơn hàng:" + gOrderInfo.id);
+
+            var vObjectRequest = {
+                trangThai: "Cancel" //3 trang thai open, confirmed, cancel
+            }
+            console.log("Trạng thái đơn hàng:" + vObjectRequest.trangThai);
+
+
+            var vXmlHttpUpdateOrder = new XMLHttpRequest();
+            vXmlHttpUpdateOrder.open("PUT", gBASE_URL + "/" + gOrderInfo.id);
+            vXmlHttpUpdateOrder.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            vXmlHttpUpdateOrder.send(JSON.stringify(vObjectRequest));
+            vXmlHttpUpdateOrder.onreadystatechange =
+                function() {
+                    if (this.readyState == gREQUEST_READY_STATUS_FINISH_AND_OK && this.status == gREQUEST_STATUS_OK) {
+
+                        alert("Hủy đơn hàng thành công: " + vXmlHttpUpdateOrder.responseText);
+                        var vUpdatedOrder = vXmlHttpUpdateOrder.responseText;
+                        console.log(vUpdatedOrder);
+                        window.location.replace("(Bai_Lam)-DanhSanhDonHang.html");
+                    }
+                }
+        }
+        /*** REGION 4 - Common funtions - Vùng khai báo hàm dùng chung trong toàn bộ chương trình*/
+
+        //BƯỚC 2:
+        //hàm điều kiện
+        function valiDateDetail(paramOrderInfo) {
+            var vURL_open = "(Bai_Lam)_Pizza365index.html";
+
+            if (paramOrderInfo.orderId == null) {
+                alert("Không có orderID");
+                window.location.href = vURL_open;
+                return false;
+            }
+
+            if (paramOrderInfo.id == null) {
+                alert("Không có ID Voucher");
+                window.location.href = vURL_open;
+                return false;
+            }
+
+            return true;
+        }
+
+        //BƯỚC 3:
+
+        // Call API Order
+        function callApiGetDataOrder(paramXmlHttp, paramOrderIDDetail) {
+            "use strict";
+            //Link Order
+            const vBASE_URL = "http://42.115.221.44:8080/devcamp-pizza365/orders";
+            paramXmlHttp.open("GET", vBASE_URL + "/" + paramOrderIDDetail.orderId, true);
+            paramXmlHttp.send();
+        }
+
+        //BƯỚC 4:
+
+        //Hàm hiển thị dữ liệu qua OrderID
+        function showDataOrderDetailByOrderID(paramXmlHttp) {
+
+            // truy xuất phần tử input
+            var vOrderID = document.getElementById("inp-orderID");
+            var vCombo = document.getElementById("inp-combo");
+            var vDuongKinh = document.getElementById("inp-duong-kinh");
+            var vSuongNuong = document.getElementById("inp-suon");
+            var vDoUong = document.getElementById("inp-drink");
+            var vSoLuongNuocUong = document.getElementById("inp-so-luong-nuoc");
+            var vVoucherID = document.getElementById("inp-voucherID");
+            var vLoaiPizza = document.getElementById("inp-pizza");
+            var vSalad = document.getElementById("inp-salad");
+            var vThanhTien = document.getElementById("inp-prices");
+            var vGiamGia = document.getElementById("inp-giam-gia");
+            var vHoTen = document.getElementById("inp-fullname");
+            var vEmail = document.getElementById("inp-email");
+            var vSoDienThoai = document.getElementById("inp-mobile");
+            var vDiaChi = document.getElementById("inp-address");
+            var vLoiNhan = document.getElementById("inp-message");
+            var vTrangThaiDonHang = document.getElementById("inp-status");
+            var vNgayTao = document.getElementById("inp-creat-order");
+            var vNgayCapNhat = document.getElementById("inp-update");
+
+            // chuyển json sang object
+            var vOrderIdObject = JSON.parse(paramXmlHttp);
+
+            var vUser = vOrderIdObject;
+
+            // hiển thị dữ liệu
+            vOrderID.value = vUser.orderId;
+            vCombo.value = vUser.kichCo;
+            vDuongKinh.value = vUser.duongKinh;
+            vSuongNuong.value = vUser.suon;
+            vDoUong.value = vUser.idLoaiNuocUong;
+            vSoLuongNuocUong.value = vUser.soLuongNuoc;
+            vVoucherID.value = vUser.idVourcher;
+            vLoaiPizza.value = vUser.loaiPizza;
+            vSalad.value = vUser.salad;
+            vThanhTien.value = vUser.thanhTien + " " + "VNĐ";
+            vGiamGia.value = vUser.giamGia;
+
+            vHoTen.value = vUser.hoTen;
+            vEmail.value = vUser.email;
+            vSoDienThoai.value = vUser.soDienThoai;
+            vDiaChi.value = vUser.diaChi;
+            vLoiNhan.value = vUser.loiNhan;
+
+            vTrangThaiDonHang.value = vUser.trangThai;
+            vNgayTao.valueAsDate = new Date(vUser.ngayTao);
+            vNgayCapNhat.valueAsDate = new Date(vUser.ngayCapNhat);
+        }
+    </script>
+
+</html>

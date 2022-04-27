@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Danh sách đơn hàng</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body onload="onPageLoading()">
+    <div class="container ">
+        <h1 class="text-center">DANH SÁCH ĐƠN HÀNG</h1>
+        <div class="mt-5">
+            <table id="table-orderId" class="table table-striped table-hover table-bordered text-center">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Kích cỡ combo</th>
+                        <th>Loại pizza</th>
+                        <th>Nước uống</th>
+                        <th>Thành tiền</th>
+                        <th>Họ và tên</th>
+                        <th>Số điện thoại</th>
+                        <th>Trạng thái</th>
+                        <th>Chi tiết</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+</body>
+<script>
+    const gREQUEST_STATUS_OK = 200;
+    const gREQUEST_READY_STATUS_FINISH_AND_OK = 4;
+    const gBASE_URL = "http://42.115.221.44:8080/devcamp-pizza365/orders";
+
+    function onPageLoading() {
+        "use strict";
+        getDataOrderPizza();
+
+    }
+
+    // Hàm sự kiện OrderDetailClick
+    function onBtnOrderDetailClick(paramOrderDetail) {
+        // lấy dữ liệu ở dataser
+        var vOrderId = paramOrderDetail.dataset.orderid;
+        var vId = paramOrderDetail.dataset.id;
+
+        //send data vào console
+        console.log("Order ID:" + vOrderId);
+        console.log("ID: " + vId);
+
+        //gọi form orderDetail hiển thị chi tiết Order
+        const vDETAI_FORM_URL = "(Bai_Lam)_OrderDetail.html";
+        var vUrlSiteToOpen = vDETAI_FORM_URL + "?" +
+            "orderId=" + vOrderId +
+            "&id=" + vId;
+        window.location.href = vUrlSiteToOpen;
+    }
+
+
+    //vùng 4
+
+    // đọc dữ liệu
+    function getDataOrderPizza() {
+        "use strict";
+
+        // Bước 1:truy xuất phần tử
+
+        //Bước 2: Điều kiện
+
+        // Bước 3: Call API
+        var vXmlHttpGetAllOrderPizza = new XMLHttpRequest();
+        vXmlHttpGetAllOrderPizza.open("GET", gBASE_URL, true);
+        vXmlHttpGetAllOrderPizza.send();
+        vXmlHttpGetAllOrderPizza.onreadystatechange =
+            function() {
+                if (this.readyState == gREQUEST_READY_STATUS_FINISH_AND_OK && this.status == gREQUEST_STATUS_OK) {
+                    console.log(vXmlHttpGetAllOrderPizza.responseText);
+                    // Bước 4: Hiện thị dữ liệu
+                    showDataToForm(vXmlHttpGetAllOrderPizza.responseText);
+                }
+            }
+    }
+
+    function showDataToForm(paramOrderList) {
+        var vTable = document.getElementById("table-orderId");
+        var vTableBody = vTable.getElementsByTagName("tbody")[0];
+        var vOrderList = JSON.parse(paramOrderList);
+
+        for (var bI = 0; bI < vOrderList.length; bI++) {
+
+            // tạo hàng cuối cho bảng
+            var vNewRows = vTableBody.insertRow(-1);
+
+            var vNewOrderCells = vNewRows.insertCell(0);
+            var vNewSizeCells = vNewRows.insertCell(1);
+            var vNewPizzaCells = vNewRows.insertCell(2);
+            var vNewDrinkCells = vNewRows.insertCell(3);
+            var vNewPriceCells = vNewRows.insertCell(4);
+            var vNewNameCells = vNewRows.insertCell(5);
+            var vNewPhoneCells = vNewRows.insertCell(6);
+            var vNewStatusCells = vNewRows.insertCell(7);
+            var vNewDetailCells = vNewRows.insertCell(8);
+
+            var vUser = vOrderList[bI];
+            //Hiển thị dữ liệu vào bảng
+            vNewOrderCells.innerHTML = vUser.orderId;
+            vNewSizeCells.innerHTML = vUser.kichCo;
+            vNewPizzaCells.innerHTML = vUser.loaiPizza;
+            vNewDrinkCells.innerHTML = vUser.idLoaiNuocUong;
+            vNewPriceCells.innerHTML = vUser.thanhTien;
+            vNewNameCells.innerHTML = vUser.hoTen;
+            vNewPhoneCells.innerHTML = vUser.soDienThoai;
+            vNewStatusCells.innerHTML = vUser.trangThai;
+
+            var bButtonChiTiet = document.createElement("button");
+            vNewDetailCells.appendChild(bButtonChiTiet);
+            bButtonChiTiet.innerHTML = "Chi tiết";
+            bButtonChiTiet.className = "btn btn-info";
+
+            bButtonChiTiet.setAttribute("data-orderid", vUser.orderId);
+            bButtonChiTiet.setAttribute("data-id", vUser.id);
+
+            //thêm sự kiện click cho nút detail
+            bButtonChiTiet.addEventListener("click", function() {
+                onBtnOrderDetailClick(this);
+            })
+        }
+    }
+</script>
+
+</html>
